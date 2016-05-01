@@ -1,0 +1,35 @@
+<div class="navbar">
+  <div class="navbar-form navbar-nav">
+    <div class="form-group-sm">
+      <label class="navbar-text col-sm-2">Filter:</label>
+      <div class="col-sm-10">
+        <input type="text" class="novalidate form-group-sm" />
+      </div>
+    </div>
+  </div>
+  <div class="nav navbar-right">
+    <li class="toolbar-item" data-ng-class="{ active: vm.TileViewSelected }">
+      <a data-ng-click="vm.onTileSelect()">
+        <span class="glyphicon glyphicon-th-large"></span> Tile
+      </a>
+    </li>
+    <li class="toolbar-item" data-ng-class="{ active: vm.TileViewSelected }">
+      <a data-ng-click="vm.onListSelect()">
+        <span class="glyphicon glyphicon-align-justify"></span> List
+      </a>
+    </li>
+    <li class="toolbar-item">
+      <a data-ng-click="vm.onAddItem()">
+        <span class="glyphicon glyphicon-plus"></span> Add
+      </a>
+    </li>
+  </div>
+</div>
+<div class="container">
+  <div class="row" data-ng-show="vm.TileViewSelected">
+    <h3>Tile View Selected</h3>
+  </div>
+  <div class="row" data-ng-hide="vm.TileViewSelected">
+    <h3>List View Selected</h3>
+  </div>
+</div>
