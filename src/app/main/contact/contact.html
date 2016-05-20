@@ -1,0 +1,13 @@
+<form class="form-horizontal" name="contactForm" data-ng-submit="" novalidate>
+  <fieldset data-ng-disabled="">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <label id="contact-name" class="panel-title">
+          <span data-ng-if="vm.contact.contactId">{{vm.contact.firstName + ' ' + vm.contact.lastName}}</span>
+          <span data-ng-if="!vm.contact.contactId">New&nbsp;Contact</span>
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</form>

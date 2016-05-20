@@ -7,6 +7,8 @@ import { MainController } from './main/main.controller';
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
 import { AboutController } from './main/about/about.controller';
 import { HomeController } from './main/home/home.controller';
+import { ContactCardDirective } from '../app/components/contactCard/contactCard.directive';
+import { ContactController } from './main/contact/contact.controller';
 
 angular.module('cardsUidemo', ['ngAnimate', 'ngTouch', 'ngResource', 'ui.router', 'ui.bootstrap', 'toastr'])
   .constant('moment', moment)
@@ -16,4 +18,6 @@ angular.module('cardsUidemo', ['ngAnimate', 'ngTouch', 'ngResource', 'ui.router'
   .controller('MainController', MainController)
   .controller('HomeController', HomeController)
   .controller('AboutController', AboutController)
-  .directive('acmeNavbar', NavbarDirective);
+  .directive('acmeNavbar', NavbarDirective)
+  .directive('contactCard', ContactCardDirective)
+  .controller('ContactController', ContactController);

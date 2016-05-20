@@ -30,4 +30,12 @@ export class HomeController {
   onAddItem() {
     this.Toastr.success('Successfully saved!', 'Add New Item');
   }
+  
+  onCardSelect(cardId) {
+    
+  }
+  
+  onCardRemove(cardId) {
+    
+  }
 }

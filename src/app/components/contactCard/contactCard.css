@@ -1,0 +1,46 @@
+.contactCard {
+  background-color:#fff;
+  border: 1px solid #d4d4d4;
+  height:100px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.contactCardHeader {
+  background-color:#027FF4;
+  font-size:14pt;
+  color:white;
+  padding:5px;
+  width:100%;
+}
+
+.contactCardClose {
+  color: white;
+  font-weight:bold;
+  margin-right:5px;
+}
+
+.contactCardContainer {
+  width:85%;
+}
+
+.contactCardBody {
+  padding-left: 5px;
+}
+
+.contactCardBodyLeft {
+  margin-top: -5px;
+}
+
+.contactCardBodyRight {
+  margin-left: 20px;
+  margin-top: 2px;
+}
+
+.contactCardBodyContent {
+  width: 100px;
+}
+
+.contactCardImage {
+  height:50px;width:50px;margin-top:10px;
+}

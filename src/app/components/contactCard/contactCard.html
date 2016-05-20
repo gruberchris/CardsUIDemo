@@ -1,0 +1,11 @@
+<div class="panel panel-default contactCard" data-ng-click="vm.cardSelect()">
+  <div class="panel-body contactCardBody">
+    <h4 class="contactCardHeader">
+      <span>{{vm.cardTitle}}</span>
+      <button type="button" class="pull-right" data-ng-click="vm.cardRemove()">Delete
+      <i class="fa fa-trash"></i>
+      </button>
+    </h4>
+    <div ng-transclude class="contactCardBodyContent"></div>
+  </div>
+</div>

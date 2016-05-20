@@ -1,14 +1,13 @@
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+li.toolbar-item.active > a {
+  background-color: #337ab7;
+  box-shadow: none;
+  color: white;
 }
 
-.thumbnail {
-  height: 200px;
+.nav > li {
+  display: inline-block;
 }
 
-.thumbnail img.pull-right {
-  width: 50px;
+.nav > li > a {
+  display: inline-block;
 }

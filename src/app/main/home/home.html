@@ -1,9 +1,9 @@
-<div class="navbar">
-  <div class="navbar-form navbar-nav">
+<div class="navbar" style="margin-bottom: 0px;">
+  <div class="nav navbar-nav">
     <div class="form-group-sm">
-      <label class="navbar-text col-sm-2">Filter:</label>
-      <div class="col-sm-10">
-        <input type="text" class="novalidate form-group-sm" />
+      <label class="navbar-text col-sm-1">Filter:</label>
+      <div class="navbar-form col-sm-11">
+        <input type="text" class="form-group-sm"/>
       </div>
     </div>
   </div>
@@ -13,7 +13,7 @@
         <span class="glyphicon glyphicon-th-large"></span> Tile
       </a>
     </li>
-    <li class="toolbar-item" data-ng-class="{ active: vm.TileViewSelected }">
+    <li class="toolbar-item" data-ng-class="{ active: !vm.TileViewSelected }">
       <a data-ng-click="vm.onListSelect()">
         <span class="glyphicon glyphicon-align-justify"></span> List
       </a>
@@ -28,8 +28,52 @@
 <div class="container">
   <div class="row" data-ng-show="vm.TileViewSelected">
     <h3>Tile View Selected</h3>
+    <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="contact in home.filteredContacts | orderBy: 'lastName'">
+      <!-- Card Directive Goes Here -->
+      <contact-card cardId="{{contact.id}}" cardTitle="{{contact.firstName + ' ' + contact.lastName}}" cardSelect="home.onCardSelect" cardRemove="home.onCardRemove">
+
+      </contact-card>
+    </div>
   </div>
   <div class="row" data-ng-hide="vm.TileViewSelected">
-    <h3>List View Selected</h3>
+    <div class="col-md-10">
+      <div>
+        <table class="table table-striped table-condensed">
+          <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <th data-ng-click="home.setOrder('lastName')">Name</th>
+            <th data-ng-click="home.setOrder('email')">E-Mail</th>
+            <th data-ng-click="home.setOrder('phone')">Phone</th>
+            <th data-ng-click="home.setOrder('mobile')">Mobile</th>
+            <th data-ng-click="home.setOrder('city')">Location</th>
+            <th>&nbsp;</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="contact in home.filteredContacts" class="repeat-animation">
+            <!--<td><a href="#/customeredit/{{customer.id}}"><img data-ng-src="Content/images/{{customer.gender | lowercase}}.png" class="cardImage" alt="Customer Image" /></a></td>-->
+            <td></td>
+            <td><a href="#/edit/{{contact.id}}">{{contact.firstName + ' ' + contact.lastName}}</a></td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.phone}}</td>
+            <td>{{contact.mobile}}</td>
+            <td>{{contact.city}}, {{contact.state}}</td>
+            <!--<td>
+              <a href="#/customerorders/{{customer.id}}" class="btn-link">
+                {{ customer.orderCount }}
+                                        <span data-ng-pluralize count="customer.orderCount"
+                                              when="{'1': 'Order','other': 'Orders'}">
+                                        </span>
+              </a>
+            </td>-->
+            <td>
+              <button class="btn btn-danger" ng-click="home.deleteCustomer(customer.id)">Delete</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>

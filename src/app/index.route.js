@@ -18,7 +18,14 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
       templateUrl: 'app/main/home/home.html',
       controller: 'HomeController',
       controllerAs: 'vm'
+    })
+    .state('main.contact', {
+      url: '/contact/:contactId',
+      templateUrl: 'app/main/contact/contact.html',
+      controller: 'ContactController',
+      controllerAs: 'vm'
     });
+
 
   $urlRouterProvider
     .when('/', '/home')
